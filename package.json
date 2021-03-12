@@ -1,0 +1,30 @@
+{
+  "name": "ts-minimal-template",
+  "version": "1.0.0",
+  "description": "A minimal template for TypeScript experiments using nodemon and tape for tests.",
+  "watch": {
+    "start": {
+      "patterns": "./src/*"
+    },
+    "test": {
+      "patterns": "./dist/*.js",
+      "quiet": true
+    }
+  },
+  "scripts": {
+    "start": "tsc --watch",
+    "test": "tape ./dist/*.test.js | tap-spec",
+    "watch": "npm-watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/tape": "^4.13.0",
+    "@types/tape-catch": "^1.0.0",
+    "npm-watch": "^0.7.0",
+    "tap-spec": "^5.0.0",
+    "tape": "^5.0.1",
+    "tape-catch": "^1.0.6"
+  }
+}
