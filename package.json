@@ -1,31 +1,27 @@
 {
   "name": "ts-minimal-template",
   "version": "1.0.0",
-  "description": "A minimal template for TypeScript experiments using nodemon and tape for tests.",
-  "watch": {
-    "start": {
-      "patterns": "./src/*"
-    },
-    "test": {
-      "patterns": "./src/*"
-    }
-  },
+  "description": "A minimal template for TypeScript doodles.",
   "scripts": {
     "start": "ts-node src/index.ts",
-    "start-watch": "nodemon src/index.ts --watch ./src",
-    "test": "tape -r ts-node/register ./src/*.test.ts | tap-spec",
-    "test-watch": "nodemon ./src/*.test.ts --watch ./src | tap-spec"
+    "start:watch": "nodemon src/index.ts --watch ./src",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "build": "rm -r ./dist && tsc"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "serve": "^11.3.2",
+    "ts-node": "^9.1.1"
+  },
   "devDependencies": {
-    "@types/tape": "^4.13.0",
-    "@types/tape-catch": "^1.0.0",
-    "tap-spec": "^5.0.0",
-    "tape": "^5.0.1",
-    "tape-catch": "^1.0.6",
-    "ts-node": "^9.1.1",
-    "typescript": "^4.2.4"
+    "@types/jest": "^26.0.23",
+    "jest": "^26.6.3",
+    "ts-jest": "^26.5.6",
+    "typescript": "^4.3.0-beta"
+  },
+  "jest": {
+    "preset": "ts-jest"
   }
 }
